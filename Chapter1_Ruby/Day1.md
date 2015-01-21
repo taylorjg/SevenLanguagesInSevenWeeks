@@ -51,5 +51,28 @@ $
 ```
 * Bonus problem
 ```ruby
+$ type GuessNumber.rb
+num = rand(10)
+print "Guess a number between 0 and 9 inclusive: "
+guess = Integer(gets)
+while guess != num
+  puts "You guessed too low" if guess < num
+  puts "You guessed too high" if guess > num
+  print "Have another go: "
+  guess = Integer(gets)
+end
+puts "You guessed correctly - the number is #{num}"
+
+$ ruby GuessNumber.rb
+Guess a number between 0 and 9 inclusive: 5
+You guessed too high
+Have another go: 3
+You guessed too high
+Have another go: 4
+You guessed too high
+Have another go: 2
+You guessed correctly - the number is 2
+
+$
 ```
 
