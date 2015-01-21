@@ -15,10 +15,14 @@
 ## Do
 
 * Print the string "Hello, world"
-    * print "Hello, world"
-    * print 'Hello, world'
+```ruby
+print "Hello, world"
+print 'Hello, world'
+```
 * For the string "Hello, Ruby", find the index of the word "Ruby"
-    * "Hello, Ruby".index("Ruby")
+```ruby
+"Hello, Ruby".index("Ruby")
+```
 * Print your name ten times
 ```ruby
 x = 0
@@ -37,7 +41,6 @@ end
 ```
 * Run a program from a file
 ```ruby
-
 $ type MyFirstRubyProgram.rb
 puts "This is my first Ruby program"
 
@@ -47,6 +50,6 @@ This is my first Ruby program
 $
 ```
 * Bonus problem
-```
+```ruby
 ```
 
