@@ -15,7 +15,7 @@
 ```Io
 Io> fred := 1
 ==> 1
-Io> fred := "one"
+Io> fred = "one"
 ==> one
 ```
 * Is 0 true or false? What about the empty string? Is nil true or false? Support your answer with code.
