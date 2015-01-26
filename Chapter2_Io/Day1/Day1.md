@@ -21,9 +21,17 @@ Io> 1 + "one"
 ```
 * Is 0 true or false? What about the empty string? Is nil true or false? Support your answer with code.
     * 0 is true
+    * "" is true
+    * nil is false
 ```Io
 Io> 0 and true
 ==> true
+
+Io> "" and true
+==> true
+
+Io> nil and true
+==> false
 ```
 * How can you tell what slots a prototype supports?
 ```Io
