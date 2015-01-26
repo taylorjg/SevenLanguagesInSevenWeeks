@@ -11,7 +11,7 @@
 ## Answer
 
 * Evaluate 1 + 1 and then 1 + "one". Is Io strongly typed or weakly typed? Support your answer with code.
-    * We can assign 1 then "one" to the same slot
+    * Weakly typed - we can assign 1 then "one" to the same slot
 ```Io
 Io> fred := 1
 ==> 1
