@@ -11,13 +11,12 @@
 ## Answer
 
 * Evaluate 1 + 1 and then 1 + "one". Is Io strongly typed or weakly typed? Support your answer with code.
-    * Weakly typed - the type problem results in a runtime exception
+    * We can assign 1 then "one" to the same slot
 ```Io
-Io> 1 + "one"
-
-  Exception: argument 0 to method '+' must be a Number, not a 'Sequence'
-  ---------
-  message '+' in 'Command Line' on line 1
+Io> fred := 1
+==> 1
+Io> fred := "one"
+==> one
 ```
 * Is 0 true or false? What about the empty string? Is nil true or false? Support your answer with code.
     * 0 is true
