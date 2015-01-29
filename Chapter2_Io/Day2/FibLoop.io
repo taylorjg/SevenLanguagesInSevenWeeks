@@ -1,6 +1,6 @@
 fib := method(n, 
 	r := 1
-	if (n == 1, return r)
+	if (n == 1, r)
 	a := 0
 	b := 1
 	i := 1
@@ -10,7 +10,7 @@ fib := method(n,
 		b = r
 		i = i + 1
 	)
-	return r
+	r
 )
 
 n := System args rest first asNumber

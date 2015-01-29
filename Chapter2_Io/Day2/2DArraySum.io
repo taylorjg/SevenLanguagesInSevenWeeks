@@ -5,7 +5,7 @@
 			sum = sum + arr at(r * cs + c)
 		)
 	)
-	return sum
+	sum
 )
 
 arr := list(1, 2, 3, 4, 5, 6)
