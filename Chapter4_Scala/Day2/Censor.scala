@@ -1,3 +1,5 @@
+import scala.io.Source
+
 trait UncensoredString {
 	val uncensored: String
 }
@@ -11,9 +13,12 @@ trait Censor {
 			.mkString(" ")
 	}
 
-	private val replacements = Map(
-		"Shoot" -> "Pucky",
-		"Darn" -> "Beans")
+	private lazy val replacements =
+		Source.fromFile("replacements.txt")
+		.getLines()
+		.map(s => s.split(","))
+		.map(ws => (ws(0), ws(1)))
+		.toMap
 }
 
 class CensoredString(override val uncensored: String)
