@@ -1,22 +1,34 @@
-trait HasString {
-	val s: String
+trait UncensoredString {
+	val uncensored: String
 }
 
 trait Censor {
-	self: HasString =>
+	self: UncensoredString =>
 	def censored: String = {
-		self.s
+		self.uncensored
+			.split(" +")
+			.map(w => replacements.getOrElse(w, w))
+			.mkString(" ")
 	}
+
+	private val replacements = Map(
+		"Shoot" -> "Pucky",
+		"Darn" -> "Beans")
 }
 
-class CensoredString(override val s: String) extends HasString with Censor {
-}
+class CensoredString(override val uncensored: String)
+	extends UncensoredString
+	with Censor
 
 object CensorApp {
 	def main(args: Array[String]) = {
-		val cs = new CensoredString("Hello")
-		val s1 = cs.s
+		val input = 
+			"I don't give a Shoot about Scala. " +
+			"I prefer Haskell because it is Darn good."
+		val cs = new CensoredString(input)
+		val s1 = cs.uncensored
 		val s2 = cs.censored
-		println(s"Before: $s1; after: $s2")
+		println(s"Before: $s1")
+		println(s"After:  $s2")
 	}
 }
