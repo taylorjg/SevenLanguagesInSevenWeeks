@@ -14,8 +14,11 @@ allEven3 (x:xs) = isEven x && allEven3 xs
 testAllEven :: String -> ([Int] -> Bool) -> IO ()
 testAllEven n f =
 	do
-		putStrLn $ n ++ " [1,2,3] = " ++ (show $ f [1,2,3])
-		putStrLn $ n ++ " [2,4,6] = " ++ (show $ f [2,4,6])
+		test n f [1,2,3]
+		test n f [2,4,6]
+		where
+			test n f xs = 
+				putStrLn $ n ++ " " ++ show xs ++ " = " ++ (show $ f xs)
 
 
 main :: IO ()
