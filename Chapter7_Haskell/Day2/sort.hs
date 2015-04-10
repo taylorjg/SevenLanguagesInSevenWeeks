@@ -8,4 +8,7 @@ sort (x:xs) =
         (as,bs) = partition (<x) xs
 
 main :: IO ()
-main = putStrLn $ show $ sort [3,2,1]
+main = 
+    do
+        let xs = [1,4,5,6,2,3,1,4,5,7,8]
+        putStrLn $ show $ sort xs
